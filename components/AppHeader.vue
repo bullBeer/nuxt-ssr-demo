@@ -5,7 +5,7 @@
       <nav class="nav">
         <ul class="nav-list">
           <li v-for="(item, i) in navList" :key="i" :class="{current: $route.name === item.routerName}">
-            <nuxt-link :to="{name: item.routerName}">{{item.label}}</nuxt-link>
+            <nuxt-link :to="{name: item.routerName, query: item.query}">{{item.label}}</nuxt-link>
           </li>
         </ul>
       </nav>
@@ -25,6 +25,9 @@ export default {
         {
           label: '资讯中心',
           routerName: 'index-news',
+          query: {
+            page: 1
+          }
         },
         {
           label: '产品业务',
